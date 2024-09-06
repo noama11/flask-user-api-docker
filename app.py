@@ -37,7 +37,7 @@ def home():
 # Create a simple route
 @app.route('/test')
 def hello_world():
-    return jsonify(message="Hello, World!")
+    return jsonify(message="Hello World!")
 
 # Another route example to get users
 @app.route('/api/users', methods=['GET'])
