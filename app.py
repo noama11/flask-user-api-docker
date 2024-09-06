@@ -22,13 +22,17 @@ class User(db.Model):
     __tablename__= 'users'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    phone_number = db.Column(db.String(20), nullable=True)  # Add this line
     
     def __repr__(self):
         return f'<User {self.username}>'
     
     def json(self):
         return {'id': self.id, 'username': self.username}
+
+
+@app.route('/')
+def home():
+    return 'Welcome to the Flask API!'
 
 # Create a simple route
 @app.route('/test')
